@@ -1,0 +1,23 @@
+name: Node.js CI
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      # - name: 'Clone git repo'
+      #  run: |
+      #    git clone https://github.com/StephanLoecher/github-actions-kurs2.git
+      #    git fetch --all
+      #    git checkout master
+
+      - name: 'Node.js 21 installieren'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+      #  run: |
+      #    curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash
+      #    sudo apt-get install -y nodejs
+      #    node -v
+      #    npm -v
